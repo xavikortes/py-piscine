@@ -4,11 +4,11 @@ class Plant:
 
     def __init__(self, name: str, height: float, days: int) -> None:
         self._name = name
-        if height > 0:
+        if height >= 0:
             self._height = height
         else:
             self._height = 15.0
-        if days > 0:
+        if days >= 0:
             self._days = days
         else:
             self._days = 10
