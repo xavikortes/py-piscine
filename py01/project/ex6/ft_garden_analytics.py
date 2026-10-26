@@ -50,7 +50,7 @@ class Plant:
         return age > 365
 
     @classmethod
-    def anonymous_plant(cls) -> Plant:
+    def anonymous_plant(cls) -> "Plant":
         return Plant("unknown plant", 0, 0)
 
     def show(self) -> None:
@@ -108,13 +108,13 @@ class Seed(Flower):
 
 
 class Tree(Plant):
-    _stats: Stats
+    _stats: "Tree.TreeStats"
 
     def __init__(self, name: str, height: float, days: int,
                  trunk_diameter: float) -> None:
         super().__init__(name, height, days)
         self._trunk_diameter = trunk_diameter
-        self._stats = self.Stats()
+        self._stats = self.TreeStats()
 
     def produce_shade(self) -> None:
         self._stats._shades_produced += 1
@@ -127,7 +127,7 @@ class Tree(Plant):
         super().show()
         print(f" Trunk diameter: {self._trunk_diameter:.1f}cm")
 
-    class Stats(Plant.Stats):
+    class TreeStats(Plant.Stats):
 
         def __init__(self) -> None:
             super().__init__()
