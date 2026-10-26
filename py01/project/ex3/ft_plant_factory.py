@@ -1,27 +1,24 @@
 #!/usr/bin/env python3
 
 class Plant:
-    _name: str
-    _height: float
-    _age: int
 
-    def __init__(self, _name: str, _height: float, _age: int):
-        self._name = _name
-        self._height = _height
-        self._age = _age
-        print("Created:", end=" ")
-        self.show()
+    def __init__(self, name: str, height: float, days: int) -> None:
+        self.name = name
+        self.height = height
+        self.days = days
 
-    def grow(self, _height=0.8):
-        self._height += _height
+    def grow(self, height: float) -> None:
+        self.height += height
 
-    def age(self, days=1):
-        self._age += days
+    def age(self, days: int) -> None:
+        self.days += days
 
-    def show(self):
-        print(f"{self._name.capitalize()}: {self._height:.1f}cm, {self._age} days old")
+    def show(self) -> None:
+        name = self.name.capitalize()
+        print(f"{name}: {self.height:.1f}cm, {self.days} days old")
 
-if __name__ == "__main__":
+
+def main() -> None:
     print("=== Garden Factory Output ===")
     plants = [
         Plant("Rose", 25, 30),
@@ -30,3 +27,10 @@ if __name__ == "__main__":
         Plant("Sunflower", 80, 45),
         Plant("Fern", 15, 120),
     ]
+    for plant in plants:
+        print("Created:", end=" ")
+        plant.show()
+
+
+if __name__ == "__main__":
+    main()
