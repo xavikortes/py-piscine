@@ -171,7 +171,7 @@ class Vegetable(Plant):
         print(f" Nutritional value: {self._nutritional_value}")
 
 
-def display_stats(plant: Plant):
+def display_stats(plant: Plant) -> None:
     name = plant._name.capitalize()
     print(f"[statistics for {name}]")
     plant._stats.display()
