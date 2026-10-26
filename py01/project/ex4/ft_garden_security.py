@@ -7,7 +7,7 @@ class Plant:
         if height > 0:
             self._height = height
         else:
-            self._height = 15
+            self._height = 15.0
         if days > 0:
             self._days = days
         else:
