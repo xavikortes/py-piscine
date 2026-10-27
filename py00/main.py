@@ -15,7 +15,7 @@ Make sure your exercise files are in the same folder as this main.py file!
 """
 
 
-def test_ft_exercise(exercise_file_path, exercise_file_name):
+def test_ft_exercise(exercise_file_path: str, exercise_file_name: str) -> None:
     """
     This function tries to run one of your exercises.
 
@@ -86,7 +86,7 @@ def test_ft_exercise(exercise_file_path, exercise_file_name):
         print("   Check your code for syntax errors")
 
 
-def main():
+def main() -> None:
     """Run main function - this runs when you execute: python3 main.py ."""
     print("🌱 Welcome to Growing Code! 🌱")
     print("This helper will test your exercises for you.")
