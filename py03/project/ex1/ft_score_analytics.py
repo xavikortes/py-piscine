@@ -28,10 +28,13 @@ def main() -> None:
     program_name = sys.argv[0]
 
     print("=== Player Score Analytics ===")
-    scores = [process_score(score) for score in sys.argv[1:]]
-    valid_scores = [score for score in scores if score]
-    if len(valid_scores):
-        show_analytics(valid_scores)
+    scores = [
+        score for arg in sys.argv[1:]
+        if (score := process_score(arg)) is not None
+    ]
+
+    if len(scores):
+        show_analytics(scores)
     else:
         print(
             f"No scores provided. "
