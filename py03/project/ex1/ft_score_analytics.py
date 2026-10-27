@@ -20,16 +20,16 @@ def process_score(score: str) -> int | None:
     try:
         return int(score)
     except Exception:
+        print(f"Invalid parameter: '{score}'")
         return None
 
 
 def main() -> None:
-    args = sys.argv
-    program_name = args[0]
-    scores = [process_score(score) for score in args[1:]]
-    valid_scores = [score for score in scores if score]
+    program_name = sys.argv[0]
 
     print("=== Player Score Analytics ===")
+    scores = [process_score(score) for score in sys.argv[1:]]
+    valid_scores = [score for score in scores if score]
     if len(valid_scores):
         show_analytics(valid_scores)
     else:
