@@ -2,12 +2,14 @@ import sys
 
 
 def print_args(args: list[str]) -> None:
-    if len(args) > 0:
-        print(f"Arguments received: {len(args)}")
-        for (i, arg) in enumerate(args):
-            print(f"Argument {i + 1}: {arg}")
-    else:
+    if len(args) == 0:
         print("No arguments provided!")
+        return
+    print(f"Arguments received: {len(args)}")
+    i = 0
+    while i < len(args):
+        print(f"Argument {i + 1}: {args[i]}")
+        i += 1
 
 
 def main() -> None:
