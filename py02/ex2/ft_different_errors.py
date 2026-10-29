@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def garden_operations(operation_number: int) -> None:
     match (operation_number):
         case 0:
