@@ -37,8 +37,9 @@ def main() -> None:
     distinct_values = len(item_names)
     total_values = sum(item_values)
 
-    most_abundant = max(inventory, key=lambda k: inventory[k])
-    least_abundant = min(inventory, key=lambda k: inventory[k])
+    if inventory:
+        most_abundant = max(inventory, key=lambda k: inventory[k])
+        least_abundant = min(inventory, key=lambda k: inventory[k])
 
     print(f"Got inventory: {inventory}")
     print(f"Item list: {item_names}")
@@ -49,14 +50,15 @@ def main() -> None:
         percent = (value * 100) / total_values
         print(f"Item {name} represents {percent:.1f}%")
 
-    print(
-        f"Item most abundant: {most_abundant} "
-        f"with quantity {inventory[most_abundant]}"
-    )
-    print(
-        f"Item least abundant: {least_abundant} "
-        f"with quantity {inventory[least_abundant]}"
-    )
+    if inventory:
+        print(
+            f"Item most abundant: {most_abundant} "
+            f"with quantity {inventory[most_abundant]}"
+        )
+        print(
+            f"Item least abundant: {least_abundant} "
+            f"with quantity {inventory[least_abundant]}"
+        )
 
     inventory.update({"magic_item": 1})
     print(f"Updated inventory: {inventory}")
