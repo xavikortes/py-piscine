@@ -7,7 +7,7 @@ def garden_operations(operation_number: int) -> None:
         case 2:
             open("/non/existent/file")
         case 3:
-            "7" + 5
+            "7" + 5 # type: ignore
 
 
 def test_error_types() -> None:
