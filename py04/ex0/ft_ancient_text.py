@@ -4,10 +4,9 @@ import sys
 import typing
 
 
-def get_file(filename: str) -> typing.IO[str] | None:
-    print(f"Accessing file '{filename}'")
+def get_file(filename: str, mode: str) -> typing.IO[str] | None:
     try:
-        return open(filename, mode="r")
+        return open(filename, mode=mode)
     except Exception as e:
         print(f"Error opening file '{filename}': {e}")
         print()
@@ -33,7 +32,8 @@ def main() -> None:
     print("=== Cyber Archives Recovery ===")
 
     filename = sys.argv[1]
-    file = get_file(filename)
+    print(f"Accessing file '{filename}'")
+    file = get_file(filename, "r")
     if file is None:
         return
 
