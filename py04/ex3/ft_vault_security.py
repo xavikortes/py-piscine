@@ -11,8 +11,6 @@ def secure_archive(
         return (False, "Error. Incompatible mode. Try 'r' or 'w'")
     if mode == "w" and content is None:
         return (False, "Error. Can't write without content")
-    if mode == "r" and content is not None:
-        return (False, "Error. Can't read with content")
 
     new_content = None
     try:
