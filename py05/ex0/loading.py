@@ -30,14 +30,23 @@ def main() -> None:
     has_all_reagents = print_dependencies()
     print()
     print("pip vs Poetry:")
-    print(" requirements.txt declares what to install; pip resolves it at install time.")
-    print(" pyproject.toml declares the same constraints, and Poetry pins the resolved")
+    print(
+        " requirements.txt declares what to install;"
+        " pip resolves it at install time."
+    )
+    print(
+        " pyproject.toml declares the same constraints,"
+        " and Poetry pins the resolved"
+    )
     print(" versions in poetry.lock so every install is identical.")
     print()
     if has_all_reagents:
         print("All reagents present and accounted for.")
     else:
-        print("Not all reagents present. Please install it with 'pip install' or 'poetry install'.")
+        print(
+            "Not all reagents present. Please install it with"
+            "'pip install' or 'poetry install'."
+        )
     print()
 
 
