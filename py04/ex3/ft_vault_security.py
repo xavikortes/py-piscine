@@ -2,11 +2,9 @@
 
 def secure_archive(
         filename: str,
-        mode: str | None = None,
+        mode: str = "r",
         content: str | None = None
         ) -> tuple[bool, str]:
-    if mode is None:
-        mode = "r"
     if mode != "r" and mode != "w":
         return (False, "Error. Incompatible mode. Try 'r' or 'w'")
     if mode == "w" and content is None:
@@ -35,11 +33,15 @@ def main() -> None:
     print(secure_archive("/etc/shadow", "r"))
     print()
     print("Using 'secure_archive' to read from a regular file:")
-    content = secure_archive("ancient_fragment.txt", "r")
+    is_ok, content = secure_archive("ancient_fragment.txt", "r")
     print(content)
     print()
-    print("Using 'secure_archive' to write previous content to a new file:")
-    print(secure_archive("new_fragment.txt", "w", content[1]))
+    if is_ok:
+        print("Using 'secure_archive' to write previous content to a new file:")
+        print(secure_archive("new_fragment.txt", "w", content))
+    else:
+        print("Cannot read from previous file.")
+        print("Skipping write content.")
     print()
 
 
