@@ -37,7 +37,10 @@ def main() -> None:
     print(content)
     print()
     if is_ok:
-        print("Using 'secure_archive' to write previous content to a new file:")
+        print(
+            "Using 'secure_archive' to write "
+            "previous content to a new file:"
+        )
         print(secure_archive("new_fragment.txt", "w", content))
     else:
         print("Cannot read from previous file.")
