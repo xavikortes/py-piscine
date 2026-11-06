@@ -6,7 +6,7 @@ import typing
 
 def consume_event(
         events: list[tuple[str, str]]
-        ) -> typing.Generator[tuple[str, str]]:
+        ) -> typing.Generator[tuple[str, str], None, None]:
     while events:
         idx = random.randint(0, len(events) - 1)
         event = events[idx]
@@ -16,7 +16,7 @@ def consume_event(
 
 def gen_event(
         players: list[str], actions: list[str]
-        ) -> typing.Generator[tuple[str, str]]:
+        ) -> typing.Generator[tuple[str, str], None, None]:
     while True:
         player_idx = random.randint(0, len(players) - 1)
         action_idx = random.randint(0, len(actions) - 1)

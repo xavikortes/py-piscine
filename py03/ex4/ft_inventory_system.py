@@ -24,6 +24,8 @@ def parse_parameter(param: str, inventory: dict[str, int]) -> tuple[str, int]:
     qty_str = splitted[1]
     try:
         qty = int(qty_str)
+        if qty < 0:
+            raise Exception("value cannot be negative.")
     except Exception as e:
         raise Exception(f"Quantity error for '{name}': {e}")
     return (name, qty)
