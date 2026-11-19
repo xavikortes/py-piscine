@@ -17,8 +17,8 @@ except ImportError:
 
 def load_config() -> None:
     dir_path = os.path.dirname(os.path.realpath(__file__))
-    load_dotenv(os.path.join(dir_path, ".env.example"))
-    load_dotenv(override=True)
+    load_dotenv()
+    load_dotenv(os.path.join(dir_path, ".env.example"), override=False)
 
 
 def connect_to_db(mode: str) -> None:
@@ -77,7 +77,7 @@ def print_configuration() -> None:
     connect_to_zion(mode)
 
 
-def security_checks(config):
+def security_checks():
     dir_path = os.path.dirname(os.path.realpath(__file__))
     ignore_path = os.path.join(dir_path, ".gitignore")
 
