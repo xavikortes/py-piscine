@@ -19,7 +19,6 @@ def battle(fact1: CreatureFactory, fact2: CreatureFactory) -> None:
     base1 = fact1.create_base()
     base2 = fact2.create_base()
 
-    print("Testing battle")
     print(base1.describe())
     print(" vs.")
     print(base2.describe())
@@ -36,6 +35,7 @@ def main() -> None:
     print()
     test_factory(trans_fact)
     print()
+    print("Testing battle")
     battle(flame_fact, trans_fact)
 
 
