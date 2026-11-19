@@ -4,7 +4,10 @@ from alchemy import grimoire
 
 
 def main() -> None:
-    light_spell = grimoire.light_spell_record("Fantasy", "Earth, wind and fire")
+    light_spell = grimoire.light_spell_record(
+        "Fantasy",
+        "Earth, wind and fire"
+    )
 
     print("=== Kaboom 0 ===")
     print("Using grimoire module directly")

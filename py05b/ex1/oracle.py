@@ -25,9 +25,12 @@ def connect_to_db(mode: str) -> None:
     db_url = os.getenv("DATABASE_URL", None)
 
     if db_url is None:
-        print("[WARN] Database: 'DATABASE_URL' is missing. Cannot connect to cluster")
+        print(
+            "[WARN] Database: 'DATABASE_URL' is missing. "
+            "Cannot connect to cluster"
+        )
         return
-    
+
     if mode == "production":
         print("[PROD] Database: Connected to remote cluster")
     else:
@@ -38,9 +41,12 @@ def authenticate_to_api(mode: str) -> None:
     api_key = os.getenv("API_KEY", None)
 
     if api_key is None:
-        print("[WARN] API Access: 'API_KEY' is missing. Cannot connect to server")
+        print(
+            "[WARN] API Access: 'API_KEY' is missing. "
+            "Cannot connect to server"
+        )
         return
-    
+
     if mode == "production":
         print("[PROD] ", end="")
     print("API Access: Authenticated")
@@ -50,9 +56,12 @@ def connect_to_zion(mode: str) -> None:
     zion_ep = os.getenv("ZION_ENDPOINT", None)
 
     if zion_ep is None:
-        print("[WARN] Remote network: 'ZION_ENDPOINT' is missing. Cannot connect to network")
+        print(
+            "[WARN] Remote network: 'ZION_ENDPOINT' is missing. "
+            "Cannot connect to network"
+        )
         return
-    
+
     if mode == "production":
         print("[PROD] ", end="")
     print("Remote network: Online")
@@ -60,7 +69,10 @@ def connect_to_zion(mode: str) -> None:
 
 def print_configuration() -> None:
     mode = os.getenv("MATRIX_MODE", "development")
-    log_level = os.getenv("LOG_LEVEL", "silent" if mode == "production" else "debug")
+    log_level = os.getenv(
+        "LOG_LEVEL",
+        "silent" if mode == "production" else "debug"
+    )
 
     if mode == "production":
         print("[PROD] Mode: production")
