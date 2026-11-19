@@ -4,7 +4,7 @@ import os
 import sys
 
 try:
-    from dotenv import load_dotenv
+    from dotenv import load_dotenv  # type: ignore[import-not-found]
 except ImportError:
     print("[ERROR] 'python-dotenv' is not installed.")
     print("To set up an environment and install it, run:")
@@ -89,7 +89,7 @@ def print_configuration() -> None:
     connect_to_zion(mode)
 
 
-def security_checks():
+def security_checks() -> None:
     dir_path = os.path.dirname(os.path.realpath(__file__))
     ignore_path = os.path.join(dir_path, ".gitignore")
 

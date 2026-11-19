@@ -10,7 +10,7 @@ def main() -> None:
     print("Now show that not all functions can be reached")
     print("This will raise an exception!")
     print("Testing create_fire: ", end="")
-    print(alchemy.create_earth())
+    print(alchemy.create_earth())  # type: ignore
 
 
 if __name__ == "__main__":
