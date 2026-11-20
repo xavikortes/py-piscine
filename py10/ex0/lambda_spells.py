@@ -53,22 +53,22 @@ def main() -> None:
     artifacts: list[Artifact] = [
         {
             "name": "Crystal Orb",
-            "power": 100,
+            "power": 77,
             "type": "relic",
         },
         {
             "name": "Storm Crown",
-            "power": 50,
+            "power": 62,
             "type": "accesory",
         },
         {
             "name": "Lightning Rod",
-            "power": 125,
+            "power": 83,
             "type": "focus",
         },
         {
             "name": "Fire Staff",
-            "power": 200,
+            "power": 120,
             "type": "weapon",
         }
     ]
@@ -76,22 +76,22 @@ def main() -> None:
     mages: list[Mage] = [
         {
             "name": "Luna",
-            "power": 425,
+            "power": 75,
             "element": "wind",
         },
         {
             "name": "Phoenix",
-            "power": 150,
+            "power": 51,
             "element": "fire",
         },
         {
             "name": "Morgan",
-            "power": 275,
+            "power": 67,
             "element": "shadow",
         },
         {
             "name": "Jordan",
-            "power": 500,
+            "power": 98,
             "element": "earth",
         }
     ]
@@ -111,7 +111,7 @@ def main() -> None:
 
     print()
     print("Testing power filter...")
-    filtered_mages = power_filter(mages, 300)
+    filtered_mages = power_filter(mages, 70)
     for mage in filtered_mages:
         print(f" - {mage["name"]} ({mage["power"]} power)")
 
