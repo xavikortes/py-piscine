@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing import Any
 
 
 class BattleStrategy(ABC):
@@ -8,9 +9,9 @@ class BattleStrategy(ABC):
         self.name = name
 
     @abstractmethod
-    def act() -> str:
+    def act(self, entity: Any) -> str:
         pass
 
     @abstractmethod
-    def is_valid() -> bool:
+    def is_valid(self, entity: Any) -> bool:
         pass
