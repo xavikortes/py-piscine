@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
-from typing import Any
+
+from ex3.base import Creature
 
 
 class BattleStrategy(ABC):
@@ -9,9 +10,9 @@ class BattleStrategy(ABC):
         self.name = name
 
     @abstractmethod
-    def act(self, entity: Any) -> str:
+    def act(self, creature: Creature) -> str:
         pass
 
     @abstractmethod
-    def is_valid(self, entity: Any) -> bool:
+    def is_valid(self, creature: Creature) -> bool:
         pass

@@ -1,6 +1,4 @@
-from typing import Any
-
-from ex3.base import TransformCapability
+from ex3.base import Creature, TransformCapability
 
 from .base import BattleStrategy
 
@@ -10,16 +8,16 @@ class NormalStrategy(BattleStrategy):
     def __init__(self) -> None:
         super().__init__("Normal")
 
-    def is_valid(self, entity: Any) -> bool:
+    def is_valid(self, creature: Creature) -> bool:
         return True
 
-    def act(self, entity: Any) -> str:
-        if not self.is_valid(entity):
+    def act(self, creature: Creature) -> str:
+        if not self.is_valid(creature):
             raise Exception(
-                f"Invalid Creature '{entity.name}' for this normal strategy."
+                f"Invalid Creature '{creature.name}' for this normal strategy."
             )
 
-        return str(entity.attack())
+        return str(creature.attack())
 
 
 class AggressiveStrategy(BattleStrategy):
@@ -27,18 +25,18 @@ class AggressiveStrategy(BattleStrategy):
     def __init__(self) -> None:
         super().__init__("Aggresive")
 
-    def is_valid(self, entity: Any) -> bool:
-        return isinstance(entity, TransformCapability)
+    def is_valid(self, creature: Creature) -> bool:
+        return isinstance(creature, TransformCapability)
 
-    def act(self, entity: Any) -> str:
-        if not self.is_valid(entity):
+    def act(self, creature: Creature) -> str:
+        if not isinstance(creature, TransformCapability):
             raise Exception(
-                f"Invalid Creature '{entity.name}' "
+                f"Invalid Creature '{creature.name}' "
                 "for this aggresive strategy."
             )
 
         return "\n".join([
-            entity.transform(),
-            entity.attack(),
-            entity.revert(),
+            creature.transform(),
+            creature.attack(),
+            creature.revert(),
         ])
