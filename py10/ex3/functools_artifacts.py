@@ -72,10 +72,10 @@ def main() -> None:
     print("Testing spell reducer...")
     spells = [10, 20, 30, 40]
 
-    print(f" - Sum: {spell_reducer(spells, "add")}")
-    print(f" - Product: {spell_reducer(spells, "multiply")}")
-    print(f" - Max: {spell_reducer(spells, "max")}")
-    print(f" - Min: {spell_reducer(spells, "min")}")
+    print(f" - Sum: {spell_reducer(spells, 'add')}")
+    print(f" - Product: {spell_reducer(spells, 'multiply')}")
+    print(f" - Max: {spell_reducer(spells, 'max')}")
+    print(f" - Min: {spell_reducer(spells, 'min')}")
 
     print()
     print("Testing partial enchanter...")
@@ -86,7 +86,7 @@ def main() -> None:
     partials = partial_enchanter(enchantment)
 
     for k, fun in partials.items():
-        print(f" - {k.capitalize()}: {fun("Dragon")}")
+        print(f" - {k.capitalize()}: {fun('Dragon')}")
 
     print()
     print("Testing memoized fibonacci...")
@@ -99,7 +99,7 @@ def main() -> None:
     print("Testing spell dispatcher...")
     dispatcher = spell_dispatcher()
     print(f"Damage spell: {dispatcher(42)}")
-    print(f"Enchantment: {dispatcher("fireball")}")
+    print(f"Enchantment: {dispatcher('fireball')}")
     print(f"Multi-cast: {dispatcher([1, 2, 3])}")
     print(dispatcher(7.2))
 

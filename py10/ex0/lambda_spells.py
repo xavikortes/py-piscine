@@ -107,13 +107,13 @@ def main() -> None:
     print("Testing artifact sorter...")
     sorted_artifacts = artifact_sorter(artifacts)
     for artifact in sorted_artifacts:
-        print(f" - {artifact["name"]} ({artifact["power"]} power)")
+        print(f" - {artifact['name']} ({artifact['power']} power)")
 
     print()
     print("Testing power filter...")
     filtered_mages = power_filter(mages, 70)
     for mage in filtered_mages:
-        print(f" - {mage["name"]} ({mage["power"]} power)")
+        print(f" - {mage['name']} ({mage['power']} power)")
 
     print()
     print("Testing spell transformer...")

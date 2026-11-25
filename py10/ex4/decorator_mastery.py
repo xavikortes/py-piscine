@@ -91,7 +91,7 @@ def main() -> None:
         time.sleep(0.101)
         return f"Fireball attack on {target}! ({power} power)"
 
-    print(f"Result: {fireball("Dragon", 50)}")
+    print(f"Result: {fireball('Dragon', 50)}")
 
     print()
     print("Testing power validator...")
@@ -100,8 +100,8 @@ def main() -> None:
     def tornado(target: str, power: int) -> str:
         return f"Tornado spell on {target}! ({power} power)"
 
-    print(f"Result OK: {tornado("Dragon", 80)}")
-    print(f"Result KO: {tornado("Dragon", 60)}")
+    print(f"Result OK: {tornado('Dragon', 80)}")
+    print(f"Result KO: {tornado('Dragon', 60)}")
 
     print()
     print("Testing retrying spell...")
@@ -114,8 +114,8 @@ def main() -> None:
     def freeze(target: str, power: int) -> str:
         return f"Freezing {target}! ({power} power)"
 
-    print(error("Dragon", 50))
-    print(freeze("Dragon", 50))
+    print(error('Dragon', 50))
+    print(freeze('Dragon', 50))
 
     print()
     print("Testing MageGuild...")
@@ -123,8 +123,8 @@ def main() -> None:
     print(f"Ga: {MageGuild.validate_mage_name('Ga')}")
     print(f"GN372: {MageGuild.validate_mage_name('GN372')}")
     guild = MageGuild()
-    print(guild.cast_spell("Lightning", 15))
-    print(guild.cast_spell("Fireball", 8))
+    print(guild.cast_spell('Lightning', 15))
+    print(guild.cast_spell('Fireball', 8))
 
     print()
 
